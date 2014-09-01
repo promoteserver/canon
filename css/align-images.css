@@ -1,0 +1,16 @@
+#bars {
+    display: table-cell;
+
+}
+#bars > div {
+ float:none; 
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 20px;
+}
+#bars > div:first-child {
+    margin-left: 0;
+}
+@media (min-width:768px){	#bars > div {	width:33%  } }
+ @media (min-width:1024px){#bars > div {	width:24.60%  } }
+ @media (max-width:767px){	#bars > div {	width:49%  } } @media (max-width:400px){	#bars > div {	width:100%  } }
