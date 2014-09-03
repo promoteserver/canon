@@ -1,6 +1,3 @@
-<?php
-include ("php/conexion.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -232,34 +229,21 @@ TELS:<br>
  </div> 
 
 
-<div class="row " >
-<div id="bars" >
-<?php
-	$sqlfp = "SELECT product FROM feature ORDER BY id DESC LIMIT 0 , 4"; // select 4 featured products.
-	$featured_result= mysql_query($sqlfp); // execute select 3 featured products.
-	while($fp = mysql_fetch_array($featured_result))// Featured Products
-	{
-		$sql1 = "SELECT * FROM products where fid = '".$fp['product']."' ORDER BY products.`idpd` ASC LIMIT 0 , 1 "; // Gimme the products who are featured
-		$product_result = mysql_query($sql1); // the query
-		$p = mysql_fetch_array($product_result); // the array of products who are featured
-		$sql= "SELECT * FROM photos where idsec='".$p['fid']."' order by id asc";
-		$result= mysql_query($sql);
-		$row = mysql_fetch_array($result); // Array with featured photos
-		if($i >= 2) // this is for the responsive things. 
-		{
-			echo '<div class="hidden-xs col-sm-4 col-lg-3 top20 col-xxs-12 text-center"> 
-			 <a href="#" class="col-img"><img src="products_img/'.$row['small'].'" width="250" height="150" class="img-border img-responsive" ><p class="lead">George II Mahogany Sideboard Server Buffet </p></a>
-			</div>';
-		}else{
-			echo ' <div class="col-xs-6 col-sm-4 col-lg-3 top20 col-xxs-12 text-center"> 
-			 <a href="#" class="col-img"><img src="products_img/'.$row['small'].'" width="250" height="150" align="bottom" class="img-border img-responsive" ><p class="lead">French Louis XV Bureau Du Roi Roll Top Desk Inlay </p></a>
-			 </div>';
-		}
-
-		$i++;
-	} 
-?>
-</div> 
+ <div class="row " >
+ <div id="bars" >
+<div class="col-xs-6 col-sm-4 col-lg-3 top20 col-xxs-12 text-center"> 
+<a href="#" class="col-img"><img src="images/featured-products/01.jpg" width="250" height="150" align="bottom" class="img-border img-responsive" ><p class="lead">French Louis XV Bureau Du Roi Roll Top Desk Inlay </p></a>
+</div>
+<div class="col-xs-6 col-sm-4 col-lg-3 top20 col-xxs-12 text-center"> 
+ <a href="#" class="col-img"><img src="images/featured-products/02.jpg" width="250" height="150"class="img-border img-responsive" ><p class="lead">Pair Russian Czar Alexander Caviar Server </p></a>
+</div>
+<div class="hidden-xs col-sm-4 col-lg-3 top20 col-xxs-12 text-center"> 
+ <a href="#" class="col-img"><img src="images/featured-products/03.jpg" width="250" height="150" class="img-border img-responsive" ><p class="lead">George II Mahogany Sideboard Server Buffet </p></a>
+</div>
+<div class="hidden-xs col-sm-4 hidden-sm col-lg-3 top20 col-xxs-12 text-center"> 
+ <a href="#" class="col-img" ><img src="images/featured-products/04.jpg" width="150" height="250" align="bottom" class="img-border img-responsive" ><p class="lead">French Ormolu Cyrstal Tabe Lamp Light Girandole </p></a>
+</div>
+</div>
 
 </div> 
 
