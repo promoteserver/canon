@@ -1,0 +1,16 @@
+.alin {
+    display:  table-cell; 
+
+}
+.alin > div {
+ float:none; 
+    display: inline-block;
+    vertical-align: bottom;
+    margin-top: 20px; 
+}
+.alin > img:first-child {
+    margin-left: 0;
+}
+
+ 
+
